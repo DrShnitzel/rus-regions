@@ -8,33 +8,35 @@ import (
 	"github.com/golang/geo/s2"
 )
 
+var parsedData [][]float64
+
 func main() {
 	fmt.Println("startu")
+	parseData("data/regions3.json")
 	polygon := prepareRegionsData()
-	// fmt.Println(polygon)
-	result := polygon.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(64.219472, 55.216981)))
+
+	result := polygon.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(58.042856, 38.921909)))
 	fmt.Println(result)
 }
 
-func prepareRegionsData() *s2.Loop {
-	rawData, err := ioutil.ReadFile("data/regions.json")
+func parseData(filePath string) {
+	rawData, err := ioutil.ReadFile(filePath)
 	if err != nil {
 		panic(err)
 	}
 
-	var parsedData [][]float64
 	err = json.Unmarshal(rawData, &parsedData)
 	if err != nil {
 		panic(err)
 	}
+}
+
+func prepareRegionsData() *s2.Loop {
 
 	var points []s2.Point
 	for _, v := range parsedData {
-		points = append(points, s2.PointFromLatLng(s2.LatLngFromDegrees(v[0], v[1])))
+		points = append(points, s2.PointFromLatLng(s2.LatLngFromDegrees(v[1], v[0])))
 	}
 
 	return s2.LoopFromPoints(points)
-	// fmt.Println(loop)
-
-	// return s2.PolygonFromLoops([]*s2.Loop{loop})
 }
