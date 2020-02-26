@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
+	"github.com/DrShnitzel/rus-regions/draw"
 	"github.com/golang/geo/s2"
 )
 
@@ -17,6 +18,8 @@ func main() {
 
 	result := polygon.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(58.042856, 38.921909)))
 	fmt.Println(result)
+
+	draw.DrawRegion(&parsedData)
 }
 
 func parseData(filePath string) {
