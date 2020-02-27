@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"net/http"
 	"os"
 
+	"github.com/DrShnitzel/rus-regions/controllers"
 	"github.com/DrShnitzel/rus-regions/draw"
 	"github.com/golang/geo/s2"
 )
@@ -20,12 +22,16 @@ func main() {
 	x := 57.605012
 	y := 38.746949
 
+	http.HandleFunc("/api/v1/fias_id", controllers.GetFiasID)
+	http.ListenAndServe(":1337", nil)
+
 	result := polygon.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(x, y)))
 	fmt.Println(result)
 
 	if os.Getenv("DEBUG") == "true" {
 		draw.RegionWithPoint(&parsedData, x, y)
 	}
+
 }
 
 func parseData(filePath string) {
