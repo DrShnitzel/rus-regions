@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"os"
 
 	"github.com/DrShnitzel/rus-regions/draw"
 	"github.com/golang/geo/s2"
@@ -13,13 +14,18 @@ var parsedData [][]float64
 
 func main() {
 	fmt.Println("startu")
-	parseData("data/regions3.json")
+	parseData("data/regions4.json")
 	polygon := prepareRegionsData()
 
-	result := polygon.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(58.042856, 38.921909)))
+	x := 57.605012
+	y := 38.746949
+
+	result := polygon.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(x, y)))
 	fmt.Println(result)
 
-	draw.DrawRegion(&parsedData)
+	if os.Getenv("DEBUG") == "true" {
+		draw.RegionWithPoint(&parsedData, x, y)
+	}
 }
 
 func parseData(filePath string) {
