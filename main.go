@@ -3,21 +3,23 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"geo/s2"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"os"
 
 	"github.com/DrShnitzel/rus-regions/controllers"
 	"github.com/DrShnitzel/rus-regions/draw"
-	"github.com/golang/geo/s2"
 )
 
 var parsedData [][]float64
 
 func main() {
-	fmt.Println("startu")
+	log.Println("application started")
 	parseData("data/regions4.json")
 	polygon := prepareRegionsData()
+	log.Println("data files loaded into memory")
 
 	x := 57.605012
 	y := 38.746949
