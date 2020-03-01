@@ -3,12 +3,10 @@ package regions
 import (
 	"encoding/json"
 	"io/ioutil"
-
-	"github.com/golang/geo/s2"
+	"log"
 )
 
-var parsedData [][]float64
-var polygon *s2.Loop
+var regionsList []region
 
 func parseData(filePath string) {
 	rawData, err := ioutil.ReadFile(filePath)
@@ -16,7 +14,7 @@ func parseData(filePath string) {
 		panic(err)
 	}
 
-	err = json.Unmarshal(rawData, &parsedData)
+	err = json.Unmarshal(rawData, &regionsList)
 	if err != nil {
 		panic(err)
 	}
@@ -24,16 +22,13 @@ func parseData(filePath string) {
 	log.Println("data file successefuly parsed")
 }
 
-func prepareData() {
-	filePath := "data/regions4.json"
-	parseData(filePath string)
+func prepareRegions() {
+	filePath := "data/regions.json"
+	parseData(filePath)
 
-	var points []s2.Point
-	for _, v := range parsedData {
-		points = append(points, s2.PointFromLatLng(s2.LatLngFromDegrees(v[1], v[0])))
+	for _, v := range regionsList {
+		v.addPolygon()
 	}
-
-	polygon = s2.LoopFromPoints(points)
 
 	log.Println("regions data loaded into memory")
 }
