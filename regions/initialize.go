@@ -2,6 +2,7 @@ package regions
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 )
@@ -22,12 +23,15 @@ func parseData(filePath string) {
 	log.Println("data file successefuly parsed")
 }
 
-func prepareRegions() {
+func PrepareRegions() {
 	filePath := "data/regions.json"
 	parseData(filePath)
 
 	for _, v := range regionsList {
-		v.addPolygon()
+		fmt.Println(v.Name)
+		fmt.Println(v.FiasID)
+		fmt.Println(v.Coordinates)
+		v.addPolygons()
 	}
 
 	log.Println("regions data loaded into memory")

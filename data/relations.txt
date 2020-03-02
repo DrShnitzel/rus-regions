@@ -1,0 +1,18 @@
+Relation Yaroslavl Oblast (81994) as subarea
+Relation Tula Oblast (81993) as subarea
+Relation Tver Oblast (2095259) as subarea
+Relation Tambov Oblast (72180) as subarea
+Relation Smolensk Oblast (81996) as subarea
+Relation Ryazan Oblast (71950) as subarea
+Relation Oryol Oblast (72224) as subarea
+Relation Moscow Oblast (51490) as subarea
+Relation Moscow (102269) as subarea
+Relation Lipetsk Oblast (72169) as subarea
+Relation Kursk Oblast (72223) as subarea
+Relation Kostroma Oblast (85963) as subarea
+Relation Kaluga Oblast (81995) as subarea
+Relation Ivanovo Oblast (85617) as subarea
+Relation Voronezh Oblast (72181) as subarea
+Relation Vladimir Oblast (72197) as subarea
+Relation Bryansk Oblast (81997) as subarea
+Relation Belgorod Oblast (83184) as subarea

@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+
+	"github.com/DrShnitzel/rus-regions/regions"
 )
 
 type response struct {
@@ -28,7 +30,7 @@ func GetFiasID(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// TODO: don't forget to handle err
-	resp.FiasID, _ := services.FiasIDByLatLong(lat, long)
+	resp.FiasID = regions.FiasIDByLatLong(lat, long)
 
 	// errors here shoudn't be possible
 	respJSON, _ := json.Marshal(resp)

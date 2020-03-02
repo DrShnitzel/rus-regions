@@ -1,7 +1,11 @@
 package regions
 
-import "github.com/golang/geo/s2"
-
 func FiasIDByLatLong(lat, long float64) string {
-	polygon.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(x, y)))
+	for _, region := range regionsList {
+		if region.containsPoint(lat, long) {
+			return region.FiasID
+		}
+	}
+	// TODO: tmp do not leave it like this!
+	return "too bad"
 }
