@@ -1,12 +1,14 @@
 package regions
 
-import "github.com/golang/geo/s2"
+import (
+	"github.com/golang/geo/s2"
+)
 
 type region struct {
 	Name        string `json:"name"`
 	FiasID      string `json:"fias_id"`
 	polygons    []*s2.Polygon
-	Coordinates [][][][]float64 `json:"loops"`
+	Coordinates [][][][]float64 `json:"coordinates"`
 }
 
 func (r region) addPolygons() {
@@ -30,7 +32,9 @@ func addPolygon(loops [][][]float64) *s2.Polygon {
 
 func (r region) containsPoint(lat, long float64) bool {
 	for _, p := range r.polygons {
-		return p.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(lat, long)))
+		if p.ContainsPoint(s2.PointFromLatLng(s2.LatLngFromDegrees(lat, long))) {
+			return true
+		}
 	}
 	return false
 }

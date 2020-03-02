@@ -4,14 +4,17 @@ require 'byebug'
 raw_data = File.read('data/raw.json')
 data = JSON.parse(raw_data)
 
-loops = data['geometries'].first['coordinates']
+polygons = data['geometries'].first['coordinates']
 
 name = ARGV[0]
 fias_id = ARGV[1]
 
-loops.map! { |l| l.reverse! }
 
-result = [{ name: name, fias_id: fias_id, loops: loops }]
+polygons.map! do |polygon|
+  polygon.map! { |loop| loop.reverse! }
+end
+
+result = [{ name: name, fias_id: fias_id, coordinates: polygons }]
 
 result_file = File.open("data/region_#{name}.json", 'wb')
 

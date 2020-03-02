@@ -30,8 +30,11 @@ func PrepareRegions() {
 	for _, v := range regionsList {
 		fmt.Println(v.Name)
 		fmt.Println(v.FiasID)
-		fmt.Println(v.Coordinates)
+		fmt.Println(len(v.Coordinates))
+		fmt.Println("polygons")
+		fmt.Println(len(v.polygons))
 		v.addPolygons()
+		fmt.Println(len(v.polygons))
 	}
 
 	log.Println("regions data loaded into memory")
