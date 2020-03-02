@@ -1,3 +1,6 @@
+// Package draw was used for visual debugging in development
+// but it is outdated and no longer working
+// It's kept because it may be fixed and used later
 package draw
 
 import (

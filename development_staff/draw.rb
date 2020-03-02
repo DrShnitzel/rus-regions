@@ -1,3 +1,6 @@
+# this script was used for animated visual debugging in development
+# but it is outdated and no longer working
+# It's kept because it may be fixed and used later
 require 'ruby2d'
 require 'json'
 
