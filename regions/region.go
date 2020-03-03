@@ -1,8 +1,6 @@
 package regions
 
 import (
-	"log"
-
 	"github.com/golang/geo/s2"
 )
 
@@ -17,7 +15,6 @@ func (r *region) addPolygons() {
 	for _, loops := range r.Coordinates {
 		r.Polygons = append(r.Polygons, generatePolygon(loops))
 	}
-	log.Println(len(r.Polygons))
 }
 
 func generatePolygon(loops [][][]float64) *s2.Polygon {

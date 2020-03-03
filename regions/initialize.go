@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
+	"os"
 )
 
 var regionsList []*region
@@ -22,8 +23,12 @@ func parseData(filePath string) {
 	log.Println("data file successefuly parsed")
 }
 
+// PrepareRegions prepares and loads regions data into memory(regionsList)
 func PrepareRegions() {
-	filePath := "data/regions.json"
+	filePath := os.Getenv("REGIONS_FILE")
+	if filePath == "" {
+		filePath = "data/regions.json"
+	}
 	parseData(filePath)
 
 	for _, v := range regionsList {

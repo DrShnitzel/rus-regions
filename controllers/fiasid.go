@@ -3,6 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -29,11 +30,18 @@ func GetFiasID(w http.ResponseWriter, r *http.Request) {
 		resp.Errors = append(resp.Errors, "Incorrect or missing long or lat params")
 	}
 
-	// TODO: don't forget to handle err
-	resp.FiasID = regions.FiasIDByLatLong(lat, long)
+	if len(resp.Errors) < 1 {
+		var err error
+		resp.FiasID, err = regions.FiasIDByLatLong(lat, long)
+		if err != nil {
+			w.WriteHeader(404)
+			resp.Errors = append(resp.Errors, err.Error())
+		}
+	}
 
 	// errors here shoudn't be possible
 	respJSON, _ := json.Marshal(resp)
 
+	log.Println(r.URL.String() + " | " + string(respJSON))
 	fmt.Fprintf(w, string(respJSON))
 }
