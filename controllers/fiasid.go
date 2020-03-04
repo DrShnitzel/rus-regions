@@ -11,7 +11,9 @@ import (
 )
 
 type response struct {
-	FiasID string   `json:"fias_id"`
+	FiasID string `json:"fias_id"`
+	// for debugging
+	Name   string   `json:"name"`
 	Errors []string `json:"errors"`
 }
 
@@ -32,7 +34,7 @@ func GetFiasID(w http.ResponseWriter, r *http.Request) {
 
 	if len(resp.Errors) < 1 {
 		var err error
-		resp.FiasID, err = regions.FiasIDByLatLong(lat, long)
+		resp.FiasID, resp.Name, err = regions.FiasIDByLatLong(lat, long)
 		if err != nil {
 			w.WriteHeader(404)
 			resp.Errors = append(resp.Errors, err.Error())

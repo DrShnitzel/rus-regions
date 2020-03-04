@@ -1,6 +1,4 @@
 # this script was used for animated visual debugging in development
-# but it is outdated and no longer working
-# It's kept because it may be fixed and used later
 require 'ruby2d'
 require 'json'
 
@@ -10,16 +8,9 @@ set width: 3000, height: 2000
 tick = 0
 
 scale = 100
-raw_data = File.read('data/regions2.json')
-data = JSON.parse(raw_data)
 
-Circle.new(
-  x: (57.605012 - 30) * scale,
-  y: (39.746949 - 30) * scale,
-  radius: 4 * scale,
-  color: 'fuchsia',
-  z: 10
-)
+raw_data = File.read('data/regions.json')
+data = JSON.parse(raw_data)[0]["coordinates"][0][0]
 
 update do
   coord = data[tick]

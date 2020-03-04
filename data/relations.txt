@@ -16,3 +16,69 @@ Relation Voronezh Oblast (72181) as subarea
 Relation Vladimir Oblast (72197) as subarea
 Relation Bryansk Oblast (81997) as subarea
 Relation Belgorod Oblast (83184) as subarea
+Relation Saint Petersburg (337422) as subarea
+Relation Komi Republic (115136) as subarea
+Relation Republic of Karelia (393980) as subarea
+Relation Pskov Oblast (155262) as subarea
+Relation Novgorod Oblast (89331) as subarea
+Relation Nenets Autonomous Okrug (274048) as subarea
+Relation Murmansk Oblast (2099216) as subarea
+Relation Leningrad oblast (176095) as subarea
+Relation Kaliningrad (103906) as subarea
+Relation Vologda Oblast (115106) as subarea
+Relation Arkhangelsk Oblast (140337) as subarea
+Relation Chechen Republic (109877) as subarea
+Relation Stavropol Krai (108081) as subarea
+Relation Republic of North Ossetia-Alania (110032) as subarea
+Relation Karachay-Cherkessia (109878) as subarea
+Relation Kabardino-Balkaria (109879) as subarea
+Relation Ingushetia (253252) as subarea
+Relation Republic of Dagestan (109876) as subarea
+Relation Bashkortostan (77677) as subarea
+Relation Tatarstan (79374) as subarea
+Relation Orenburg Oblast (77669) as subarea
+Relation Kirov Oblast (115100) as subarea
+Relation Perm Krai (115135) as subarea
+Relation Udmurtia (115134) as subarea
+Relation Ulyanovsk Oblast (72192) as subarea
+Relation Chuvashia (80513) as subarea
+Relation Republic of Mordovia (72196) as subarea
+Relation Nizhny Novgorod Oblast (72195) as subarea
+Relation Penza Oblast (72182) as subarea
+Relation Saratov Oblast (72193) as subarea
+Relation Mari El (115114) as subarea
+Relation Samara Oblast (72194) as subarea
+Relation Kurgan Oblast (140290) as subarea
+Relation Sverdlovsk Oblast (79379) as subarea
+Relation Tyumen Oblast (140291) as subarea
+Relation Khanty-Mansiysk Autonomous Okrug – Ugra (140296) as subarea
+Relation Chelyabinsk Oblast (77687) as subarea
+Relation Yamalo-Nenets Autonomous Okrug (191706) as subarea
+Relation Tuva Republic (145195) as subarea
+Relation Tomsk Oblast (140295) as subarea
+Relation Republic of Khakassia (190911) as subarea
+Relation Omsk Oblast (140292) as subarea
+Relation Novosibirsk Oblast (140294) as subarea
+Relation Krasnoyarsk Krai (190090) as subarea
+Relation Kemerovo Oblast (144763) as subarea
+Relation Irkutsk Oblast (145454) as subarea
+Relation Altai Krai (144764) as subarea
+Relation Altai Republic (145194) as subarea
+Relation Chukotka Autonomous Okrug (151231) as subarea
+Relation Khabarovsk Krai (151223) as subarea
+Relation Sakhalin Oblast (394235) as subarea
+Relation Sakha Republic (151234) as subarea
+Relation Primorsky Krai (151225) as subarea
+Relation Magadan Oblast (151228) as subarea
+Relation Kamchatka Krai (151233) as subarea
+Relation Jewish Autonomous Oblast (147167) as subarea
+Relation Amur Oblast (147166) as subarea
+Relation Zabaykalsky Krai (145730) as subarea
+Relation Buryatia (145729) as subarea
+Relation Rostov Oblast (85606) as subarea
+Relation Krasnodar Krai (108082) as subarea
+Relation Republic of Kalmykia (108083) as subarea
+Relation Volgograd Oblast (77665) as subarea
+Relation Astrakhan Oblast (112819) as subarea
+Relation Republic of Adygea (253256) as subarea
+Relation Sevastopol (3788485) as subarea
