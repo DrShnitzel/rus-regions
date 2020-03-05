@@ -25,7 +25,10 @@ func generatePolygon(loops [][][]float64) *s2.Polygon {
 			points = append(points, s2.PointFromLatLng(s2.LatLngFromDegrees(v[1], v[0])))
 		}
 
-		s2LoopList = append(s2LoopList, s2.LoopFromPoints(points))
+		newLoop := s2.LoopFromPoints(points)
+		// Normalize inperfect data
+		newLoop.Normalize()
+		s2LoopList = append(s2LoopList, newLoop)
 	}
 	return s2.PolygonFromLoops(s2LoopList)
 }
